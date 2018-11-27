@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "start": "rimraf dist && gulp && run-p devserver webpack:dev",
-    "devserver": "yarn babel && run-p run:dev babel:dev",
+    "devserver": "npm run babel && run-p run:dev babel:dev",
     "run": "node dist/server",
     "run:dev": "nodemon dist/server",
     "render": "node dist/server/render",
@@ -20,7 +20,7 @@
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook -o dist-storybook",
     "example": "rimraf docs/app docs/storybook && run-p example:app example:storybook",
-    "example:app": "yarn bundle && copyfiles -u 2 'dist/static/**/*' docs/app && copyfiles -u 5 docs/app/pages/main/en/index.html docs/app",
+    "example:app": "npm run bundle && copyfiles -u 2 'dist/static/**/*' docs/app && copyfiles -u 5 docs/app/pages/main/en/index.html docs/app",
     "example:storybook": "build-storybook -o docs/storybook"
   },
   "keywords": [],
